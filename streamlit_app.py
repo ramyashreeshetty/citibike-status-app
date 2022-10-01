@@ -24,6 +24,6 @@ if streamlit.button('show status'):
           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
           my_cur = my_cnx.cursor()
           my_cur.execute("select * from station_status where 'ID' = '" + option + "';")
-          df2 = my_cur.fetchone()
-          streamlit.write(df2)
+          df2 = my_cur.fetchall()
+          streamlit.write(df2['LAST_REPORTED')
           
