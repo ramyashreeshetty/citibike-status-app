@@ -9,8 +9,6 @@ streamlit.title('Citibike station')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-# run a snowflake query and put it all in a var called my_catalog
-my_cur.execute("select station to know the status")
 
 
 
