@@ -17,7 +17,7 @@ def load_table_as_dataframe(table):
     data = run_query("SELECT * FROM public.{};".format(str(table)))
     columns = run_query("SELECT *FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '{}';".format(str(table)))
     # Fish out the actual column names
-    columns = [c[3] for c in columns]
+    columns = [c[8] for c in columns]
     df = pd. DataFrame(data, columns = columns)
     return df
 
