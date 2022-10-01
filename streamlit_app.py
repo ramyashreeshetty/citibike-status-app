@@ -13,6 +13,7 @@ my_cur.execute("select * from station_status")
 my_catalog = my_cur.fetchall()
 
 df = pandas.DataFrame(my_catalog)
+df.columns = map(lambda x: str(x).upper(), df.columns)
 id_list = df[0].values.tolist()
 
 #streamlit.write(id_list)
@@ -21,7 +22,7 @@ option = streamlit.selectbox('Choose the station id to view the status:', list(i
 if streamlit.button('show status'):
           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
           my_cur = my_cnx.cursor()
-          my_cur.execute("select * from station_status where legacy_id = 72")
+          my_cur.execute("select * from station_status id = 72")
           df2 = my_cur.fetchone()
           streamlit.write(df2)
           
