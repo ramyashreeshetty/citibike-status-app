@@ -8,6 +8,6 @@ streamlit.title('Citibike station')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-my_cur.fetchall()
+my_catalog=my_cur.fetchall()
 
 
