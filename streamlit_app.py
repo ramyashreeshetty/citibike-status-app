@@ -24,7 +24,7 @@ option = streamlit.selectbox('Choose the station id to view the status:', list(i
 if streamlit.button('show status'):
           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
           my_cur = my_cnx.cursor()
-          my_cur.execute("select * from station_status where 'ID' = '" + option + "';")
+          my_cur.execute("select ID,EBIKES from station_status where 'ID' = '" + option + "';")
           df2 = my_cur.fetchall()
-          streamlit.write(df2.loc[5])
+          streamlit.write(df2)
           
