@@ -17,7 +17,7 @@ id_list = df[0].values.tolist()
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
 if streamlit.button('show status'):
-  my_cur.execute("select * from station_status where "id"= '" + option + "';")
+  my_cur.execute("select * from station_status where id= '" + option + "';")
   res=my_cur.fetchone()
   rs = pandas.DataFrame(res)
   streamlit.write(rs)               
