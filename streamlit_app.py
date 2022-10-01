@@ -16,7 +16,7 @@ df = pd.DataFrame(my_catalog,columns=['id','legacy_id','station_status','bikes_a
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 #streamlit.write(df.columns)
 
-id_list = df.['id'].values.tolist()
+id_list = df['id'].values.tolist()
 streamlit.write(id_list)
 
 # option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
