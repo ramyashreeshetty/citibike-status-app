@@ -23,5 +23,5 @@ if streamlit.button('show status'):
           my_cur = my_cnx.cursor()
           my_cur.execute("select * from station_status")
           df2 = my_cur.fetchone()
-          streamlit.write(df2[0])
+          streamlit.write(df2)
           
