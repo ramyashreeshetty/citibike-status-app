@@ -16,14 +16,14 @@ df = pd.DataFrame(my_catalog,columns=['id','legacy_id','station_status','bikes_a
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 #streamlit.write(df.columns)
 
-id_list = df.loc[0].values.tolist()
-#streamlit.write(id_list)
+id_list = df.['id'].values.tolist()
+streamlit.write(id_list)
 
-option = streamlit.selectbox('Choose the station id to view the status:', id_list)
-if streamlit.button('show status'):
-          my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-          my_cur = my_cnx.cursor()
-          my_cur.execute("select * from station_status id = 72")
-          df2 = my_cur.fetchone()
-          streamlit.write(df2)
+# option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
+# if streamlit.button('show status'):
+#           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+#           my_cur = my_cnx.cursor()
+#           my_cur.execute("select * from station_status id = 72")
+#           df2 = my_cur.fetchone()
+#           streamlit.write(df2)
           
