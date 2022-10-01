@@ -15,7 +15,7 @@ my_catalog = my_cur.fetchall()
 df = pandas.DataFrame(my_catalog)
 id_list = df[0].values.tolist()
 
-print(list(id_list))
+stream.write(id_list)
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
 # stream.write(option)
