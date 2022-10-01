@@ -13,7 +13,7 @@ my_cur.execute("select * from station_status")
 my_catalog = my_cur.fetchall()
 
 
-df = pandas.DataFrame(my_catalog)
+df = pd.DataFrame(my_catalog)
 df.reset_index(inplace=True)
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 streamlit.write(df.columns)
