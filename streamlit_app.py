@@ -14,8 +14,8 @@ my_cur = my_cnx.cursor()
 
 def load_table_as_dataframe(table):
     # This is super klugy. 
-    data = run_query("SELECT * FROM schema.{};".format(str(table)))
-    columns = run_query("SELECT *FROM information_schema.columns WHERE table_schema = 'schema' AND table_name = '{}';".format(str(table)))
+    data = run_query("SELECT * FROM public.{};".format(str(table)))
+    columns = run_query("SELECT *FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '{}';".format(str(table)))
     # Fish out the actual column names
     columns = [c[3] for c in columns]
     df = pd. DataFrame(data, columns = columns)
