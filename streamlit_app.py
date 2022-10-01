@@ -9,14 +9,15 @@ streamlit.title('Citibike station')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-# my_cur.execute("select * from station_status")
-# my_catalog = my_cur.fetchall()
+my_cur.execute("select * from station_status")
+my_catalog = my_cur.fetchall()
 
-# df = pandas.DataFrame(my_catalog)
-df = my_cur.execute(pd.read_sql("SELECT * FROM public.station_status;", my_cnx))
+
+df = pandas.DataFrame(my_catalog)
+df.reset_index(inplace=True)
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 streamlit.write(df.columns)
-# id_list = df[0].values.tolist()
+#id_list = df[0].values.tolist()
 #df.columns = df.columns.str.upper()
 # #streamlit.write(id_list)
 
