@@ -13,7 +13,7 @@ my_cur = my_cnx.cursor()
 # my_catalog = my_cur.fetchall()
 
 # df = pandas.DataFrame(my_catalog)
-df = my_cur.execute(pd.read_sql("SELECT * FROM station_status;",my_cnx))
+df = pd.read_sql("SELECT * FROM schema.{};".format(str(station_status)), conn)
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 streamlit.write(df.columns)
 # id_list = df[0].values.tolist()
