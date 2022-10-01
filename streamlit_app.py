@@ -25,5 +25,5 @@ if streamlit.button('show status'):
           my_cur = my_cnx.cursor()
           my_cur.execute("select * from station_status where 'ID' = '" + option + "';")
           df2 = my_cur.fetchall()
-          streamlit.write(df2['LAST_REPORTED'])
+          streamlit.write(df2)
           
