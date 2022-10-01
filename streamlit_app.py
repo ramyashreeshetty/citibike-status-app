@@ -14,7 +14,6 @@ my_catalog = my_cur.fetchall()
 
 
 df = pd.DataFrame(my_catalog)
-df.reset_index(inplace=True)
 #df.columns = map(lambda x: str(x).upper(), df.columns)
 streamlit.write(df.columns)
 #id_list = df[0].values.tolist()
