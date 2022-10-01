@@ -15,10 +15,10 @@ my_catalog = my_cur.fetchall()
 df = pandas.DataFrame(my_catalog)
 id_list = df[0].values.tolist()
 
-streamlit.write(id_list)
+#streamlit.write(id_list)
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
-# stream.write(option)
+stream.write(option)
 # if streamlit.button('show status'):
 #           my_cur.execute("select id from station_status where id= '" + option + "' ")
 #           df2 = my_cur.fetchone()
