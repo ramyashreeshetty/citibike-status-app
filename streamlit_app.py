@@ -19,7 +19,7 @@ df = pd.DataFrame(my_catalog,columns=['id','legacy_id','station_status','bikes_a
 id_list = df.loc[0].values.tolist()
 #streamlit.write(id_list)
 
-option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
+option = streamlit.selectbox('Choose the station id to view the status:', id_list)
 if streamlit.button('show status'):
           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
           my_cur = my_cnx.cursor()
