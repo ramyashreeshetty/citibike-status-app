@@ -13,7 +13,7 @@ my_cur.execute("select * from station_status")
 my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog,columns=['id','legacy_id','station_status','bikes_available','bikes_disabled','rented_bikes','returned_bikes','ebikes','last_reported'])
-#df.columns = map(lambda x: str(x).upper(), df.columns)
+df.columns = map(lambda x: str(x).upper(), df.columns)
 #streamlit.write(df.columns)
 
 id_list = df['id'].values.tolist()
