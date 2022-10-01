@@ -17,14 +17,14 @@ df.columns = map(lambda x: str(x).upper(), df.columns)
 #streamlit.write(df.columns)
 streamlit.write(df)
 
-# id_list = df['ID'].values.tolist()
-# #streamlit.write(id_list)
+id_list = df['ID'].values.tolist()
+#streamlit.write(id_list)
 
-# option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
-# if streamlit.button('show status'):
-#           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-#           my_cur = my_cnx.cursor()
-#           my_cur.execute("select * from station_status where 'ID' = '" + option + "';")
-#           df2 = my_cur.fetchall()
-#           streamlit.write(df2)
+option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
+if streamlit.button('show status'):
+          my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+          my_cur = my_cnx.cursor()
+          my_cur.execute("select * from station_status where 'ID' = '" + option + "';")
+          df2 = my_cur.fetchall()
+          streamlit.write(df2[5])
           
