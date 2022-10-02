@@ -4,7 +4,8 @@ import snowflake.connector
 from urllib.error import URLError
 
 streamlit.title('Citibike station')
-streamlit.write("Hello change made by moron")
+
+
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
