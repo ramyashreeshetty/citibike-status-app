@@ -11,7 +11,7 @@ my_cur = my_cnx.cursor()
 
 my_cur.execute("select 'id' from station_status")
 my_catalog = my_cur.fetchall()
-df = pandas.DataFrame(my_catalog)
+df = pd.DataFrame(my_catalog)
 
 # temp write the dataframe to the page so I Can see what I am working with
 streamlit.write(df)
