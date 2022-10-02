@@ -9,7 +9,7 @@ streamlit.title('Citibike station')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-my_cur.execute("select ID from citibike_status;")
+my_cur.execute("""select "legacy_id" from citibike_status""")
 my_catalog = my_cur.fetchall()
 df = pd.DataFrame(my_catalog)
 
