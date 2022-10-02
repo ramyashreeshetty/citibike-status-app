@@ -13,7 +13,8 @@ my_cur.execute("select * from station_status")
 my_catalog = my_cur.fetchall()
 hdrs = pd.DataFrame(my_cur.description)
 streamlit.write(hdrs['name'])
-
+df.columns = hdrs['name']
+streamlit.write(df)
 # df = pd.DataFrame(my_catalog,columns=['id','legacy_id','station_status','bikes_available','bikes_disabled','rented_bikes','returned_bikes','ebikes','last_reported'])
 # df.columns = map(lambda x: str(x).upper(), df.columns)
 # #streamlit.write(df.columns)
