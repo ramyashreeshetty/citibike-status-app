@@ -37,3 +37,4 @@ database = "citibike"
 schema = "public"
 ```
 
+5) ANDDD ```DEPLOY```
