@@ -9,11 +9,10 @@ streamlit.title('Citibike station')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-my_cur.execute("""select "legacy_id" from citibike_status""")
+my_cur.execute("""select * from citibike_status""")
 my_catalog = my_cur.fetchall()
 df = pd.DataFrame(my_catalog)
 
-# temp write the dataframe to the page so I Can see what I am working with
 streamlit.write(df)
 # hdrs = pd.DataFrame(my_cur.description)
 
