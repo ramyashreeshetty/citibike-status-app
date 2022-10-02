@@ -22,4 +22,18 @@ Streamlit based web application which uses python and snowflake to display the s
 - Don't forget to :star: the repository!
 - We'll be editing the code in github itself so need to clone it locally all you have to do is:
 
-1) Fork it and create a branch named  `hacktoberfest` .
+1) Fork it.
+2) go to streamlit.io and sign-in if you have an account or create a new one (Always choose github sign in)
+3) create a new app on streamlit and select the forked repository and let the main file path remain the as the same!
+4) Now click on `Advanced settings` and copy paste the given text into `secrets`.
+
+```
+[snowflake]
+user = "snowflakedemo"
+password = "Snowflake@123"
+account = "zx88924.ca-central-1.aws" 
+warehouse = "compute_wh"
+database = "citibike" 
+schema = "public"
+```
+
