@@ -5,6 +5,8 @@ from urllib.error import URLError
 
 streamlit.title('Citibike station')
 
+
+
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
@@ -27,4 +29,5 @@ if streamlit.button('show status'):
           res = my_cur.fetchall()
           df2=pd.DataFrame(res,columns=hdrs['name'])
           streamlit.write(df2)
+  
           
