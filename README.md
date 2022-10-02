@@ -38,3 +38,6 @@ schema = "public"
 ```
 
 5) ANDDD ```DEPLOY```
+6) After deploying you can make changes in ```streamlit.py``` file in github itself by editting and commiting.
+7) Create a PR when done. 
+:smile: Happy contributing!!!
