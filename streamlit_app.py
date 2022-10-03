@@ -29,7 +29,7 @@ if streamlit.button('show status'):
           res = my_cur.fetchall()
           df2=pd.DataFrame(res,columns=hdrs['name']).loc[0]
           for c in hdrs['name']:
-                    streamlit.write([x.upper() for x in c.split("_")], ":\t", df2.at[c])
+                    streamlit.write(*[x.upper() for x in c.split("_")], ":\t", df2.at[c])
           
   
           
