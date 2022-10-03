@@ -27,7 +27,13 @@ if streamlit.button('show status'):
           my_cur = my_cnx.cursor()
           my_cur.execute("""select * from citibike_status where "id" = """ + option + """; """)
           res = my_cur.fetchall()
-          df2=pd.DataFrame(res,columns=hdrs['name'])
-          streamlit.write(df2)
+          df2=pd.DataFrame(res,columns=hdrs['name']).loc[0]
+          col1, col2 = streamlit.columns(2)
+          for c in hdrs['name']:
+                    with col1:
+                              streamlit.write(*[x.upper() for x in c.split("_")], ":")
+                    with col2:
+                              streamlit.write(df2.at[c])
+                    
   
           
