@@ -28,8 +28,10 @@ if streamlit.button('show status'):
           my_cur.execute("""select * from citibike_status where "id" = """ + option + """; """)
           res = my_cur.fetchall()
           df2=pd.DataFrame(res,columns=hdrs['name']).loc[0]
+          col1, col2 = streamlit.columns(2)
           for c in hdrs['name']:
-                    streamlit.write(*[x.upper() for x in c.split("_")], ":\t", df2.at[c])
+                    col1.write(*[x.upper() for x in c.split("_")], ":")
+                    col2.write(df2.at[c])
           
   
           
