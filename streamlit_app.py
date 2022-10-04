@@ -7,14 +7,11 @@ streamlit.title('Citibike station')
 
 
 #Adding Background Image
-page_bg = """
-<style>
-[data-testid="stAppViewContainer"]{
-          background-color:#ccffff
-}
 
-
-streamlit.markdown(page_bg,unsafe_allow_html = True)
+st.markdown(""" <style> .font {
+font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
+</style> """, unsafe_allow_html=True)
+streamlit.markdown('<p class="font">Guess the object Names</p>', unsafe_allow_html=True)
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -45,5 +42,4 @@ if streamlit.button('show status'):
                               streamlit.write(df2.at[c])
                     
   
- </style>
-"""
+
