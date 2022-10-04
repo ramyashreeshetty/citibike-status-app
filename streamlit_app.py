@@ -11,7 +11,7 @@ streamlit.title('Citibike station')
 streamlit.markdown(
     """
     <style>
-    .reportview-container {
+    [data-testid="stAppViewContainer"] {
         background: url("https://bicycle2work.com/wp-content/uploads/2019/03/cycling-in-new-york-city-e1551818622466-1024x650.jpg")
     }
     </style>
