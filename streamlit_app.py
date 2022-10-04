@@ -6,7 +6,7 @@ from urllib.error import URLError
 streamlit.title('Citibike Station')
 
 
-#Adding Background Image
+#Adding Style
 
 streamlit.markdown(
     """
@@ -17,7 +17,7 @@ streamlit.markdown(
     
     [class="css-1g1an1w edgvbvh9"]{
     background-color: #EEEEEE:
-    border: 1px solid #DCDCDC;
+    border: 2px solid #DCDCDC;
     border-radius: 48px;
     }
     </style>
