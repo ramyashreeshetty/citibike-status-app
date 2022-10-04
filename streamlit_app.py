@@ -6,6 +6,16 @@ from urllib.error import URLError
 streamlit.title('Citibike station')
 
 
+#Adding Background Image
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"]{
+          background-color:#ccffff
+}
+
+</style>
+"""
+streamlit.markdown("",unsafe_allow_html = True)
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
