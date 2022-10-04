@@ -7,6 +7,9 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 
+streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+
+
 #Adding Style
 
 streamlit.markdown(
@@ -25,11 +28,6 @@ streamlit.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
-
-
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -59,9 +57,8 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 
 st_lottie(lottie_hello, key="hello")
 
-
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
-if streamlit.button('show status'):
+if streamlit.button('Show Status'):
           my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
           my_cur = my_cnx.cursor()
           my_cur.execute("""select * from citibike_status where "id" = """ + option + """; """)
@@ -75,4 +72,3 @@ if streamlit.button('show status'):
                               streamlit.write(df2.at[c])
                     
   
-          
