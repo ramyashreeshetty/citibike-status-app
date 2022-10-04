@@ -1,4 +1,3 @@
-from turtle import width
 import streamlit
 import pandas as pd
 import snowflake.connector
@@ -38,7 +37,7 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 
 
 
-st_lottie(lottie_hello, key="hello")
+st_lottie(lottie_hello, key="hello", height=100, width=100)
 
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
