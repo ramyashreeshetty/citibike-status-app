@@ -8,10 +8,19 @@ streamlit.title('Citibike station')
 
 #Adding Background Image
 
-streamlit.markdown(""" <style>{
-  background-color: lightblue;}
-</style> """, unsafe_allow_html=True)
-
+streamlit.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://bicycle2work.com/wp-content/uploads/2019/03/cycling-in-new-york-city-e1551818622466-1024x650.jpg")
+    }
+   .sidebar .sidebar-content {
+        background: url("https://bicycle2work.com/wp-content/uploads/2019/03/cycling-in-new-york-city-e1551818622466-1024x650.jpg")
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
