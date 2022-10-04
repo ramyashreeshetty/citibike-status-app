@@ -13,8 +13,7 @@ page_bg = """
           background-color:#ccffff
 }
 
-</style>
-"""
+
 streamlit.markdown(page_bg,unsafe_allow_html = True)
 
 # connect to snowflake
@@ -46,4 +45,5 @@ if streamlit.button('show status'):
                               streamlit.write(df2.at[c])
                     
   
-          
+ </style>
+"""
