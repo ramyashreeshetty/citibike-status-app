@@ -18,7 +18,7 @@ streamlit.markdown(
     [class="css-1g1an1w edgvbvh9"]{
     background-color: #EEEEEE:
     border: 1px solid #DCDCDC;
-    border-radius: 10px;
+    border-radius: 48px;
     }
     </style>
     """,
