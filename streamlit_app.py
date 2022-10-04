@@ -1,3 +1,4 @@
+from turtle import width
 import streamlit
 import pandas as pd
 import snowflake.connector
@@ -7,7 +8,7 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 
-streamlit.markdown("<h0 style='text-align: center; color: white;'>Citibike Station 🚲 </h0>", unsafe_allow_html=True)
+streamlit.markdown("<h1 style='text-align: center; color: white;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
 
 
@@ -33,7 +34,7 @@ def load_lottieurl(url: str):
 
 
 lottie_url_hello = "https://assets5.lottiefiles.com/packages/lf20_ntvobf3t.json"
-lottie_hello = load_lottieurl(lottie_url_hello)
+lottie_hello = load_lottieurl(lottie_url_hello, height=100, width=100)
 
 
 
