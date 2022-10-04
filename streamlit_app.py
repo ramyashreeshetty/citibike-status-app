@@ -11,7 +11,7 @@ streamlit.title('Citibike station')
 streamlit.markdown(
     """
     <style>
-    [data-testid="stAppViewContainer"] {
+    [class="main css-k1vhr4 egzxvld3"] {
         background-color: lightblue;
     }
     </style>
