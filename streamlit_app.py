@@ -3,7 +3,7 @@ import pandas as pd
 import snowflake.connector
 from urllib.error import URLError
 
-streamlit.title('Citibike station')
+streamlit.title('Citibike Station')
 
 
 #Adding Background Image
@@ -13,6 +13,11 @@ streamlit.markdown(
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
         background-color: lightblue;
+    }
+    
+    [class="css-1g1an1w edgvbvh9"]{
+    background-color: #EEEEEE:
+    border; 1px solid #DCDCDC;
     }
     </style>
     """,
