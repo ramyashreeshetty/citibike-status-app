@@ -15,7 +15,7 @@ page_bg = """
 
 </style>
 """
-streamlit.markdown("",unsafe_allow_html = True)
+streamlit.markdown(page_bg,unsafe_allow_html = True)
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
