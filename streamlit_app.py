@@ -32,12 +32,12 @@ def load_lottieurl(url: str):
     return r.json()
 
 
-lottie_url_hello = "https://assets5.lottiefiles.com/packages/lf20_ntvobf3t.json"
+lottie_url_hello = "https://assets7.lottiefiles.com/packages/lf20_ntvobf3t.json"
 lottie_hello = load_lottieurl(lottie_url_hello)
 
 
 
-st_lottie(lottie_hello, key="hello", height=500, width=500)
+st_lottie(lottie_hello, key="hello")
 
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
