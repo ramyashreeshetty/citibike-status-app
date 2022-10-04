@@ -38,7 +38,7 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 
 
 
-st_lottie(lottie_hello, key="hello", height=100, width=100)
+st_lottie(lottie_hello, key="hello", renderer="canvas")
 
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
