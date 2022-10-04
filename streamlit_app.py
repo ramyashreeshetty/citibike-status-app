@@ -7,7 +7,27 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 
-streamlit.markdown("<h1 style='text-align: center; color: white;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+#Adding Style
+
+streamlit.markdown(
+    """
+    <style>
+    [class="main css-k1vhr4 egzxvld3"] {
+        background-color: lightblue;
+    }
+    
+    [class="css-1g1an1w edgvbvh9"]{
+    background-color: #EEEEEE:
+    border: 2px solid #DCDCDC;
+    border-radius: 48px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
 
 
@@ -32,7 +52,7 @@ def load_lottieurl(url: str):
     return r.json()
 
 
-lottie_url_hello = "https://assets7.lottiefiles.com/packages/lf20_ntvobf3t.json"
+lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_kzfpndct.json"
 lottie_hello = load_lottieurl(lottie_url_hello)
 
 
