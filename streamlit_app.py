@@ -8,7 +8,7 @@ streamlit.title('Citibike station')
 
 #Adding Background Image
 
-st.markdown(""" <style> .font {
+streamlit.markdown(""" <style> .font {
 font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
 </style> """, unsafe_allow_html=True)
 streamlit.markdown('<p class="font">Guess the object Names</p>', unsafe_allow_html=True)
