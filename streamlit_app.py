@@ -2,8 +2,12 @@ import streamlit
 import pandas as pd
 import snowflake.connector
 from urllib.error import URLError
+import time
+import requests
+from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie_spinner
 
-streamlit.title('Citibike station')
+streamlit.markdown("<h1 style='text-align: center; color: red;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
 
 
@@ -20,6 +24,21 @@ hdrs = pd.DataFrame(my_cur.description)
 
 id_list = df[0].values.tolist()
 #streamlit.write(id_list)
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+
+lottie_url_hello = "https://assets9.lottiefiles.com/packages/lf20_he9apbws.json"
+lottie_hello = load_lottieurl(lottie_url_hello)
+
+
+
+st_lottie(lottie_hello, key="hello")
+
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
 if streamlit.button('show status'):
