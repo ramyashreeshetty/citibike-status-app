@@ -7,7 +7,7 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 
-streamlit.markdown("<h1 style='text-align: center; color: white;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+streamlit.markdown("<h0 style='text-align: center; color: white;'>Citibike Station 🚲 </h0>", unsafe_allow_html=True)
 
 
 
