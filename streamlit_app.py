@@ -8,12 +8,10 @@ streamlit.title('Citibike station')
 
 #Adding Background Image
 
-streamlit.markdown(""" <style>
-body {
-  background-color: lightblue;
-}
+streamlit.markdown(""" <style>{
+  background-color: lightblue;}
 </style> """, unsafe_allow_html=True)
-# streamlit.markdown(background, unsafe_allow_html=True)
+
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
