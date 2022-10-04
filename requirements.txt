@@ -1,4 +1,4 @@
 snowflake-connector-python
 time
 requests
-streamlit_lottie
+streamlit-lottie
