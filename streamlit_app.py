@@ -7,8 +7,8 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 
-streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
+streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
 #Adding Style
 
@@ -71,4 +71,4 @@ if streamlit.button('Show Status'):
                     with col2:
                               streamlit.write(df2.at[c])
                     
-  
+
