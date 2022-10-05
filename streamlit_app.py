@@ -28,7 +28,7 @@ streamlit.markdown(
 
 #Adding Images 
 image = Image.open('Images/Citibank.svg.png')
-streamlit.image(image, caption='CitiBank')
+streamlit.image(image)
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
