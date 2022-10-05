@@ -27,7 +27,7 @@ streamlit.markdown(
 )
 
 #Adding Images 
-image = Image.open('https://github.com/Aviral2002/citibike-status-app/blob/main/Images/Citibank.svg.png')
+image = Image.open('Images/Citibank.svg.png')
 streamlit.image(image, caption='CitiBank')
 
 # connect to snowflake
