@@ -1,5 +1,6 @@
 import streamlit
 import pandas as pd
+from PIL import Image
 import snowflake.connector
 from urllib.error import URLError
 
@@ -24,6 +25,10 @@ streamlit.markdown(
     """,
     unsafe_allow_html=True
 )
+
+#Adding Images 
+image = Image.open('https://github.com/Aviral2002/citibike-status-app/blob/main/Images/Citibank.svg.png')
+streamlit.image(image, caption='CitiBank')
 
 # connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
