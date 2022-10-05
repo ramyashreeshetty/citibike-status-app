@@ -52,11 +52,8 @@ def load_lottieurl(url: str):
 
 lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_rxevbe2y.json"
 lottie_hello = load_lottieurl(lottie_url_hello)
-st_lottie(lottie_hello, speed=1, loop=True, quality="medium", width=120)
-
-
-
 st_lottie(lottie_hello, key="hello")
+
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
 if streamlit.button('Show Status'):
