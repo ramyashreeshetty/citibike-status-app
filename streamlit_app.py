@@ -52,7 +52,7 @@ def load_lottieurl(url: str):
 
 lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_rxevbe2y.json"
 lottie_hello = load_lottieurl(lottie_url_hello)
-st_lottie(lottie_url_hello,width=1920)
+st_lottie(lottie_url_hello,width=120)
 
 
 
