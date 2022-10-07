@@ -17,16 +17,13 @@ Streamlit based web application which uses python and snowflake to display the s
   &nbsp;
 </body>
 
-# how to contribute
+# How to contribute
 
 - Don't forget to :star: the repository!
-- We'll be editing the code in github itself so need to clone it locally all you have to do is:
+- We will be editing the code in GitHub itself so need to clone it locally all you have to do is:
 
-1) Fork it.
-2) go to streamlit.io and sign-in if you have an account or create a new one (Always choose github sign in)
-3) create a new app on streamlit and select the forked repository and let the main file path remain the as the same!
-4) Now click on `Advanced settings` and copy paste the given text into `secrets`.
-
+1) Fork this repository.
+2) Store this secrets on clipboard or any file.
 ```
 [snowflake]
 user = "snowflakedemo"
@@ -36,8 +33,24 @@ warehouse = "compute_wh"
 database = "citibike" 
 schema = "public"
 ```
+3) You can do run Streamlit app on your local machine or Streamlit Cloud
+    * Local machine
+      - Install dependencies and streamlit framework
+         ```bash
+          pip install streamlit
+          pip install -r requirements.txt
+        ```
+      - Create new file under `.streamlit/secrets.toml` and paste the given text from step 2 
+      - Run streamlit app
+         ```bash
+          streamlit run streamlit_app.py
+        ```
+    * Streamlit Cloud 
+      - Go to [streamlit.io](https://streamlit.io/) and sign-in if you have an account or create a new one (Always choose github sign in)
+      - Create a new app on streamlit and select the forked repository and let the main file path remain the as the same!
+      - Now click on `Advanced settings` and paste the given text from step 2 into `secrets`.
+      - Press `Deploy` and wait for streamlit project provision
 
-5) ANDDD ```DEPLOY```
-6) After deploying you can make changes in ```streamlit.py``` file in github itself by editting and commiting.
-7) Create a PR when done. 
+4) After deploying you can make changes in ```streamlit.py``` file in github itself by editting and commiting.
+5) Create a PR when done. 
 :smile: Happy contributing!!!
