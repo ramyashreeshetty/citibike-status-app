@@ -1,18 +1,40 @@
-import streamlit
-import pandas as pd
-import snowflake.connector
-from urllib.error import URLError
-import time
 import requests
+
+import pandas as pd
+from snowflake import connector
+import streamlit as st
 from streamlit_lottie import st_lottie
-from streamlit_lottie import st_lottie_spinner
 
 
-streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+def get_snowflake_connector():
+    # connect to snowflake
+    return connector.connect(**st.secrets["snowflake"])
 
-#Adding Style
-streamlit.markdown(
-    """
+
+def perform_query(connector, query: str):
+    # Perform snowflake query
+    cursor = connector.cursor()
+    cursor.execute(query)
+    catalog = cursor.fetchall()
+    description = cursor.description
+
+    return catalog, description
+
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+
+if __name__ == "__main__":
+    # Header
+    st.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+
+    # CSS Style
+    st.markdown(
+        """
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
         background-color: lightblue;
@@ -25,36 +47,38 @@ streamlit.markdown(
     }
     </style>
     """,
-    unsafe_allow_html=True
-)
+        unsafe_allow_html=True,
+    )
 
-# connect to snowflake
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
+    # Render lottie image
+    # lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_rxevbe2y.json"
+    # lottie_hello = load_lottieurl(lottie_url_hello)
+    # st_lottie(lottie_hello, key="hello")
 
-my_cur.execute("""select * from citibike_status""")
-my_catalog = my_cur.fetchall()
-df = pd.DataFrame(my_catalog)
+    # Get snowflake connector
+    connector = get_snowflake_connector()
 
-#streamlit.write(df)
-hdrs = pd.DataFrame(my_cur.description)
+    # Get citibike id list
+    all_citibike, all_citibike_description = perform_query(connector, "SELECT * FROM citibike_status")
+    all_citibike_df = pd.DataFrame(all_citibike)
+    all_citibike_description_df = pd.DataFrame(all_citibike_description)
+    all_citibike_id_list = all_citibike_df[0].values.tolist()
 
-#streamlit.write(id_list)
-id_list = df[0].values.tolist()
+    options = st.selectbox("Choose the station id to view the status:", list(all_citibike_id_list))
 
+    if st.button("Show Status"):
+        # Focus only specific id
+        specific_citibike, specific_description = perform_query(
+            connector, f'SELECT * FROM citibike_status WHERE "id" = {options};'
+        )
 
-option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
-if streamlit.button('Show Status'):
-          my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-          my_cur = my_cnx.cursor()
-          my_cur.execute("""select * from citibike_status where "id" = """ + option + """; """)
-          res = my_cur.fetchall()
-          df2=pd.DataFrame(res,columns=hdrs['name']).loc[0]
-          col1, col2 = streamlit.columns(2)
-          for c in hdrs['name']:
-                    with col1:
-                              streamlit.write(*[x.upper() for x in c.split("_")], ":")
-                    with col2:
-                              streamlit.write(df2.at[c])
-                    
+        specific_citibike_df = pd.DataFrame(specific_citibike, columns=all_citibike_description_df["name"]).loc[0]
 
+        left_col, right_col = st.columns(2)
+
+        # Re-adjust result
+        for col_name in all_citibike_description_df["name"]:
+            with left_col:
+                st.write(*[x.upper() for x in col_name.split("_")], ":")
+            with right_col:
+                st.write(specific_citibike_df.at[col_name])
