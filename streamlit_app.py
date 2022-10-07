@@ -42,6 +42,8 @@ if __name__ == "__main__":
         unsafe_allow_html=True,
     )
 
+    
+#Feature 1: station status----------------------------------------------------------------------------->
     # Get snowflake connector
     connector = get_snowflake_connector()
 
@@ -67,3 +69,23 @@ if __name__ == "__main__":
                 st.write(*[x.upper() for x in col_name.split("_")], ":")
             with right_col:
                 st.write(specific_citibike_df.at[col_name])
+                
+                
+#Feature 2: station info----------------------------------------------------------------------------->
+        #new feature-------------------------------------------------------------------------------->
+    
+        station_info, station_desc = perform_query(connector,"""select * from station_info""")
+        station_info_df = pd.Dataframe(station_info)
+        station_info_id_list = station_info_df[0].values.tolist()
+
+        #option
+        options = st.selectbox('Choose the station id to view the station information:', list(station_info_id_list))
+        if st.button('Show Info'):
+            # Focus only specific id
+            specific_station, specific_station_description = perform_query(
+            connector, f'SELECT * FROM station_info WHERE "id" = {options};'
+        )
+            
+            st.write('Station name: ', specific_station[0][3])
+
+                  
