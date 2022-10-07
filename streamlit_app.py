@@ -3,7 +3,6 @@ import requests
 import pandas as pd
 from snowflake import connector
 import streamlit as st
-from streamlit_lottie import st_lottie
 
 
 def get_snowflake_connector():
@@ -19,13 +18,6 @@ def perform_query(connector, query: str):
     description = cursor.description
 
     return catalog, description
-
-
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
 
 if __name__ == "__main__":
@@ -50,11 +42,6 @@ if __name__ == "__main__":
         unsafe_allow_html=True,
     )
 
-    # Render lottie image
-    # lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_rxevbe2y.json"
-    # lottie_hello = load_lottieurl(lottie_url_hello)
-    # st_lottie(lottie_hello, key="hello")
-
     # Get snowflake connector
     connector = get_snowflake_connector()
 
@@ -65,7 +52,6 @@ if __name__ == "__main__":
     all_citibike_id_list = all_citibike_df[0].values.tolist()
 
     options = st.selectbox("Choose the station id to view the status:", list(all_citibike_id_list))
-
     if st.button("Show Status"):
         # Focus only specific id
         specific_citibike, specific_description = perform_query(
@@ -73,7 +59,6 @@ if __name__ == "__main__":
         )
 
         specific_citibike_df = pd.DataFrame(specific_citibike, columns=all_citibike_description_df["name"]).loc[0]
-
         left_col, right_col = st.columns(2)
 
         # Re-adjust result
