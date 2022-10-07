@@ -11,7 +11,6 @@ from streamlit_lottie import st_lottie_spinner
 streamlit.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
 
 #Adding Style
-
 streamlit.markdown(
     """
     <style>
@@ -40,19 +39,8 @@ df = pd.DataFrame(my_catalog)
 #streamlit.write(df)
 hdrs = pd.DataFrame(my_cur.description)
 
-id_list = df[0].values.tolist()
 #streamlit.write(id_list)
-
-# def load_lottieurl(url: str):
-#     r = requests.get(url)
-#     if r.status_code != 200:
-#         return None
-#     return r.json()
-
-
-# lottie_url_hello = "https://assets2.lottiefiles.com/packages/lf20_rxevbe2y.json"
-# lottie_hello = load_lottieurl(lottie_url_hello)
-# st_lottie(lottie_hello, key="hello")
+id_list = df[0].values.tolist()
 
 
 option = streamlit.selectbox('Choose the station id to view the status:', list(id_list))
