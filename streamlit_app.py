@@ -83,7 +83,7 @@ if __name__ == "__main__":
     if st.button('Show Info'):
         # Focus only specific id
         specific_station, specific_station_description = perform_query(
-        connector, f'SELECT * FROM station_info WHERE "station_id" = {options};'
+        connector, f'SELECT * FROM station_info WHERE "STATION_ID" = {options};'
     )
 
         st.write('Station name: ', specific_station[0][3])
