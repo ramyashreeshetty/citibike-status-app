@@ -40,15 +40,15 @@ if __name__ == "__main__":
     
     [class="css-10trblm e16nr0p30"]{
     background-image: url("https://img.freepik.com/free-vector/lake-river-city-buildings-skyline_107791-9055.jpg?size=626&ext=jpg");
-    height:auto;
-    width:auto;
+    height:200px;
+    width:10%;
     }
     
     [class="css-wgrr2o effi0qh3"]{
-     font-size: large;
+     font-size: 150%;
     }
     [class="css-wgrr2o effi0qh3"]{
-     font-size: large;
+     font-size: 150%;
     }
     </style>
     """,
