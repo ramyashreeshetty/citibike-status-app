@@ -74,7 +74,7 @@ if __name__ == "__main__":
 #Feature 2: station info----------------------------------------------------------------------------->
         #new feature-------------------------------------------------------------------------------->
     
-    station_info, station_desc = perform_query(connector,"""select * from station_info""")
+    station_info, station_desc = perform_query(connector,"select * from station_info")
     station_info_df = pd.Dataframe(station_info)
     station_info_id_list = station_info_df[0].values.tolist()
 
