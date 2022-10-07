@@ -37,6 +37,10 @@ if __name__ == "__main__":
     border: 2px solid #DCDCDC;
     border-radius: 48px;
     }
+    [class="css-10trblm e16nr0p30"]{
+     height: 200px;
+     width: 50%
+    }
     </style>
     """,
         unsafe_allow_html=True,
