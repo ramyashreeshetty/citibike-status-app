@@ -37,9 +37,9 @@ if __name__ == "__main__":
     border: 2px solid #DCDCDC;
     border-radius: 48px;
     }
+    
     [class="css-10trblm e16nr0p30"]{
-     height: 200px;
-     width: 50%
+    background-image: url("https://img.freepik.com/free-vector/lake-river-city-buildings-skyline_107791-9055.jpg?size=626&ext=jpg");
     }
     </style>
     """,
