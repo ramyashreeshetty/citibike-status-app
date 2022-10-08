@@ -30,7 +30,7 @@ if __name__ == "__main__":
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
           background-color: #E5E5F7;
-          background-color: #89e1e2;
+          background-color: #ABCBCC;
           opacity: 0;
           background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -20px 0/ 40px 40px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -20px 0/ 40px 40px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 40px 40px, linear-gradient(45deg, #444cf7 25%, #89e1e2 25%) 0px 0/ 40px 40px;
     }
