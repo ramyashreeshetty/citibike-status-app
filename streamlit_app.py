@@ -29,9 +29,6 @@ if __name__ == "__main__":
         """
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
-        background-color: lightblue;
-        background-color: #a1d1e6;
-        opacity: 0.8;
         background: linear-gradient(135deg, #a197ba55 25%, transparent 25%) -27px 0/ 54px 54px, linear-gradient(225deg, #a197ba 25%, transparent 25%) -27px 0/ 54px 54px, linear-gradient(315deg, #a197ba55 25%, transparent 25%) 0px 0/ 54px 54px, linear-gradient(45deg, #a197ba 25%, #a1d1e6 25%) 0px 0/ 54px 54px;
        }
     
