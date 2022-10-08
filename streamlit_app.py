@@ -53,7 +53,7 @@ if __name__ == "__main__":
     all_citibike_description_df = pd.DataFrame(all_citibike_description)
     all_citibike_id_list = all_citibike_df[0].values.tolist()
 
-    options = st.selectbox("Choose the station id to view the status:", list(all_citibike_id_list))
+    options = st.sidebar.selectbox("Choose the station id to view the status:", list(all_citibike_id_list))
     if st.button("Show Status"):
         # Focus only specific id
         specific_citibike, specific_description = perform_query(
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     station_info_id_list = station_info_df[0].values.tolist()
 
     #option
-    options = st.selectbox('Choose the station id to view the station information:', list(station_info_id_list))
+    options = st.sidebar.selectbox('Choose the station id to view the station information:', list(station_info_id_list))
     if st.button('Show Info'):
         # Focus only specific id
         specific_station, specific_station_description = perform_query(
