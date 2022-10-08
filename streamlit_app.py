@@ -28,15 +28,7 @@ if __name__ == "__main__":
     st.markdown(
         """
     <style>
-    [class="main css-k1vhr4 egzxvld3"] {
-            position: fixed;
-  width: 100vw;
-  height: 100vh;
-  
- background-color: #e5e5f7;
-opacity: 0.4;
-background: linear-gradient(135deg, #4a4b6b55 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(225deg, #4a4b6b 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(315deg, #4a4b6b55 25%, transparent 25%) 0px 0/ 48px 48px, linear-gradient(45deg, #4a4b6b 25%, #e5e5f7 25%) 0px 0/ 48px 48px;
-    }
+   
     [class="css-1g1an1w edgvbvh9"]{
     background-color: #EEEEEE;
     border: 2px solid #DCDCDC;
@@ -54,6 +46,15 @@ background: linear-gradient(135deg, #4a4b6b55 25%, transparent 25%) -24px 0/ 48p
     }
     [class="css-wgrr2o effi0qh3"]{
      font-size: 150%;
+    }
+     [class="main css-k1vhr4 egzxvld3"] {
+            position: fixed;
+  width: 100vw;
+  height: 100vh;
+  
+ background-color: #e5e5f7;
+opacity: 0.4;
+background: linear-gradient(135deg, #4a4b6b55 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(225deg, #4a4b6b 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(315deg, #4a4b6b55 25%, transparent 25%) 0px 0/ 48px 48px, linear-gradient(45deg, #4a4b6b 25%, #e5e5f7 25%) 0px 0/ 48px 48px;
     }
     </style>
     """,
