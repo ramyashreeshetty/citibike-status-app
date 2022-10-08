@@ -36,6 +36,7 @@ if __name__ == "__main__":
     }
     
     [class="css-10trblm e16nr0p30"]{
+    opactiy: 1;
     background-image: url("https://img.freepik.com/free-vector/lake-river-city-buildings-skyline_107791-9055.jpg?size=626&ext=jpg");
     height:200px;
     width:10%;
@@ -43,16 +44,18 @@ if __name__ == "__main__":
     
     [class="css-wgrr2o effi0qh3"]{
      font-size: 150%;
+      opactiy: 1;
     }
     [class="css-wgrr2o effi0qh3"]{
      font-size: 150%;
+      opactiy: 1;
     }
      [class="main css-k1vhr4 egzxvld3"] {
         position: fixed;
         width: 100vw;
         height: 100vh;
         background-color: #e5e5f7;
-        opacity: 0;
+        opacity: 0.2;
         background: linear-gradient(135deg, #4a4b6b55 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(225deg, #4a4b6b 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(315deg, #4a4b6b55 25%, transparent 25%) 0px 0/ 48px 48px, linear-gradient(45deg, #4a4b6b 25%, #e5e5f7 25%) 0px 0/ 48px 48px;
     }
     </style>
