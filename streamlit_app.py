@@ -30,10 +30,10 @@ if __name__ == "__main__":
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
           background-color: #E5E5F7;
-          background-color: #ABCBCC;
-          opacity: 0;
-          background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -20px 0/ 40px 40px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -20px 0/ 40px 40px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 40px 40px, linear-gradient(45deg, #444cf7 25%, #89e1e2 25%) 0px 0/ 40px 40px;
-    }
+         background-color: #e5e5f7;
+        opacity: 0.4;
+        background: linear-gradient(135deg, #4a4b6b55 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(225deg, #4a4b6b 25%, transparent 25%) -24px 0/ 48px 48px, linear-gradient(315deg, #4a4b6b55 25%, transparent 25%) 0px 0/ 48px 48px, linear-gradient(45deg, #4a4b6b 25%, #e5e5f7 25%) 0px 0/ 48px 48px;
+            }
     [class="css-1g1an1w edgvbvh9"]{
     background-color: #EEEEEE;
     border: 2px solid #DCDCDC;
