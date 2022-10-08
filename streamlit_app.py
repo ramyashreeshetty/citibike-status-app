@@ -29,7 +29,7 @@ if __name__ == "__main__":
         """
     <style>
     [class="main css-k1vhr4 egzxvld3"] {
-        https://www.magicpattern.design/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbrandbird%2Fmagicpattern%2Fwallpapers%2Fmagicpattern-mesh-gradient-1635770568709-preview.jpg&w=3840&q=75
+        background : url("https://www.magicpattern.design/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbrandbird%2Fmagicpattern%2Fwallpapers%2Fmagicpattern-mesh-gradient-1635770568709-preview.jpg&w=3840&q=75");
        }
     
     [class="css-1g1an1w edgvbvh9"]{
