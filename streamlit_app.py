@@ -1,5 +1,3 @@
-import requests
-
 import pandas as pd
 from snowflake import connector
 import streamlit as st
@@ -8,16 +6,6 @@ import streamlit as st
 def get_snowflake_connector():
     # connect to snowflake
     return connector.connect(**st.secrets["snowflake"])
-
-
-def perform_query(connector, query: str):
-    # Perform snowflake query
-    cursor = connector.cursor()
-    cursor.execute(query)
-    catalog = cursor.fetchall()
-    description = cursor.description
-
-    return catalog, description
 
 
 if __name__ == "__main__":
@@ -68,45 +56,17 @@ if __name__ == "__main__":
     # Get snowflake connector
     connector = get_snowflake_connector()
 
-    # Get citibike id list
-    all_citibike, all_citibike_description = perform_query(connector, "SELECT * FROM citibike_status")
-    all_citibike_df = pd.DataFrame(all_citibike)
-    all_citibike_description_df = pd.DataFrame(all_citibike_description)
-    all_citibike_id_list = all_citibike_df[0].values.tolist()
+    all_station_info_df = pd.read_sql_query('SELECT * FROM station_info WHERE "STATION_ID" in (SELECT "id" FROM citibike_status);', connector)
 
-    options = st.sidebar.selectbox("Choose the station id to view the status:", list(all_citibike_id_list))
-    if st.button("Show Status"):
-        # Focus only specific id
-        specific_citibike, specific_description = perform_query(
-            connector, f'SELECT * FROM citibike_status WHERE "id" = {options};'
-        )
+    selected_station_name = st.sidebar.selectbox("Choose the station to view the status:", all_station_info_df["STATION_NAME"])
+    selected_station_description = all_station_info_df[all_station_info_df["STATION_NAME"] == selected_station_name].reset_index()
 
-        specific_citibike_df = pd.DataFrame(specific_citibike, columns=all_citibike_description_df["name"]).loc[0]
-        left_col, right_col = st.columns(2)
+    options = int(selected_station_description["STATION_ID"][0])
 
-        # Re-adjust result
-        for col_name in all_citibike_description_df["name"]:
-            with left_col:
-                st.write(*[x.upper() for x in col_name.split("_")], ":")
-            with right_col:
-                st.write(specific_citibike_df.at[col_name])
-                
-                
-#Feature 2: station info----------------------------------------------------------------------------->
-        #new feature-------------------------------------------------------------------------------->
-    
-    station_info, station_desc = perform_query(connector,"select * from station_info")
-    station_info_df = pd.DataFrame(station_info)
-    station_info_id_list = station_info_df[0].values.tolist()
-
-    #option
-    options = st.sidebar.selectbox('Choose the station id to view the station information:', list(station_info_id_list))
-    if st.button('Show Info'):
-        # Focus only specific id
-        specific_station, specific_station_description = perform_query(
-        connector, f'SELECT * FROM station_info WHERE "STATION_ID" = {options};'
-    )
-
-        st.write('Station name: ', specific_station[0][3])
-
-                  
+    all_station_info_df = pd.read_sql_query(f'SELECT * FROM citibike_status WHERE "id" = {options};', connector)
+    left_col, right_col = st.columns(2)
+    for col_name in all_station_info_df.columns:
+        with left_col:
+            st.write(*[x.upper() for x in col_name.split("_")], ":")
+        with right_col:
+            st.write(all_station_info_df[col_name][0])
