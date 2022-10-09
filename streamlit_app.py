@@ -29,6 +29,11 @@ if __name__ == "__main__":
         """
     <style>
    
+   [class="css-uc1cuc e8zbici2"]{
+    background-color: #e5e5f7;
+    opacity: 0.6;
+    background: linear-gradient(135deg, #6a6db155 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(225deg, #6a6db1 25%, transparent 25%) -11px 0/ 22px 22px, linear-gradient(315deg, #6a6db155 25%, transparent 25%) 0px 0/ 22px 22px, linear-gradient(45deg, #6a6db1 25%, #e5e5f7 25%) 0px 0/ 22px 22px;
+   }
     [class="css-1g1an1w edgvbvh9"]{
     background-color: #EEEEEE;
     border: 2px solid #DCDCDC;
