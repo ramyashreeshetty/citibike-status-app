@@ -72,7 +72,7 @@ if __name__ == "__main__":
             st.write(all_station_info_df[col_name][0])
     
     #Map implementation--->
-    mapdata = pd.read_sql_query('SELECT * FROM station_info);',connector)
+    mapdata = pd.read_sql_query('SELECT * FROM station_info;',connector)
     mapdata = mapdata.rename(columns={"LATITUDE":"lat","LONGITUDE":"lon"})
     st.map(data)
                       
