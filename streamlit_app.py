@@ -36,7 +36,7 @@ if __name__ == "__main__":
     }
     
     [class="css-10trblm e16nr0p30"]{
-    opactiy: 1;
+    opactiy: 0.7;
     background-image: url("https://img.freepik.com/free-vector/lake-river-city-buildings-skyline_107791-9055.jpg?size=626&ext=jpg");
     height:200px;
     width:10%;
