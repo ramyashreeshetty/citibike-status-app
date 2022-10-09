@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     all_station_info_df = pd.read_sql_query('SELECT * FROM station_info WHERE "STATION_ID" in (SELECT "id" FROM citibike_status);', connector)
 
-    selected_station_name = st.sidebar.selectbox("Choose the station id to view the status:", all_station_info_df["STATION_NAME"])
+    selected_station_name = st.sidebar.selectbox("Choose the station to view the status:", all_station_info_df["STATION_NAME"])
     selected_station_description = all_station_info_df[all_station_info_df["STATION_NAME"] == selected_station_name].reset_index()
 
     options = int(selected_station_description["STATION_ID"][0])
