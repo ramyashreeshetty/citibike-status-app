@@ -36,11 +36,11 @@ if __name__ == "__main__":
     }
     
     [class="css-wgrr2o effi0qh3"]{
-     font-size: 150%;
+     font-size: 120%;
       opactiy: 1;
     }
     [class="css-wgrr2o effi0qh3"]{
-     font-size: 150%;
+     font-size: 120%;
       opactiy: 1;
     }
      [class="main css-k1vhr4 egzxvld3"] {
