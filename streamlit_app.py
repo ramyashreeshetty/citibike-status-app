@@ -22,20 +22,41 @@ def perform_query(connector, query: str):
 
 if __name__ == "__main__":
     # Header
-    st.markdown("<h1 style='text-align: center; color: black;'>Citibike Station 🚲 </h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #1F3442; font-size:60px;'>Citibike Station 🚲 </h2>", unsafe_allow_html=True)
 
     # CSS Style
     st.markdown(
         """
     <style>
-    [class="main css-k1vhr4 egzxvld3"] {
-        background-color: lightblue;
+   
+   [class="css-uc1cuc e8zbici2"]{
+   background-color: #e9e9fa;
+    opacity: 0.3;
+    background: linear-gradient(135deg, #c957c855 25%, transparent 25%) -13px 0/ 26px 26px, linear-gradient(225deg, #c957c8 25%, transparent 25%) -13px 0/ 26px 26px, linear-gradient(315deg, #c957c855 25%, transparent 25%) 0px 0/ 26px 26px, linear-gradient(45deg, #c957c8 25%, #e9e9fa 25%) 0px 0/ 26px 26px;
     }
-    
     [class="css-1g1an1w edgvbvh9"]{
-    background-color: #EEEEEE:
+    background-color: #EEEEEE;
     border: 2px solid #DCDCDC;
     border-radius: 48px;
+    }
+    
+    [class="css-10trblm e16nr0p30"]{
+    opactiy: 0.7;
+    background-image: url("https://i.pinimg.com/originals/57/d7/cb/57d7cba19b18b0206767b537bb1245fa.png");
+    height:200px;
+    width:10%;
+    }
+    
+    [class="css-wgrr2o effi0qh3"]{
+     font-size: 150%;
+      opactiy: 1;
+    }
+    [class="css-wgrr2o effi0qh3"]{
+     font-size: 150%;
+      opactiy: 1;
+    }
+     [class="main css-k1vhr4 egzxvld3"] {
+        background-color: #e5e5f7;
     }
     </style>
     """,
