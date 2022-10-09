@@ -52,7 +52,7 @@ if __name__ == "__main__":
     )
 
     
-#Feature 1: station status----------------------------------------------------------------------------->
+#Feature 1: station status and info----------------------------------------------------------------------------->
     # Get snowflake connector
     connector = get_snowflake_connector()
 
@@ -70,3 +70,9 @@ if __name__ == "__main__":
             st.write(*[x.upper() for x in col_name.split("_")], ":")
         with right_col:
             st.write(all_station_info_df[col_name][0])
+    
+    #Map implementation--->
+    mapdata = pd.read_sql_query('SELECT * FROM station_info);',connector)
+    mapdata = mapdata.rename(columns={"LATITUDE":"lat","LONGITUDE":"lon"})
+    st.map(data)
+                      
